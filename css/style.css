@@ -274,6 +274,8 @@ h1,h2,h3,h4{
 .btn-wa:hover{background:#0B3A57;border-color:#0B3A57;color:#fff}
 .btn-call{background:#fff;border-color:var(--h-gold-line);color:var(--h-gold)}
 .btn-call:hover{background:#FBF4E6;border-color:var(--h-gold);color:#9C7024}
+.btn-book{background:#CC9A43;border-color:#CC9A43;color:#fff;box-shadow:0 10px 22px -12px rgba(160,110,30,.75)}
+.btn-book:hover{background:#B5843A;border-color:#B5843A;color:#fff}
 
 .chips{
   display:flex;flex-wrap:wrap;gap:8px;max-width:470px;
@@ -467,6 +469,17 @@ h1,h2,h3,h4{
 .press .soft{font-family:var(--deva);line-height:1.6}
 @media (max-width:720px){.press{max-width:360px;transform:none}}
 
+/* award photos */
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:clamp(36px,4vw,56px)}
+@media (max-width:760px){.awards{grid-template-columns:1fr}}
+.award{margin:0;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
+.award img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 0;transition:transform .5s ease}
+.award:hover img{transform:scale(1.03)}
+.award figcaption{display:flex;flex-direction:column;gap:6px;padding:18px 22px 22px;border-top:3px solid var(--gold);position:relative;background:var(--surface)}
+.award figcaption .mono{color:var(--gold-deep);font-size:.62rem}
+.award figcaption b{font-family:var(--display);font-weight:500;font-size:1.15rem;line-height:1.3}
+.award figcaption .soft{font-size:.88rem}
+
 /* ---------- 14. reviews ---------- */
 .quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 @media (max-width:820px){.quotes{grid-template-columns:1fr}}
@@ -487,6 +500,23 @@ h1,h2,h3,h4{
 }
 .quote figcaption b{color:var(--text);font-weight:600}
 .quote figcaption span::before{content:"· "}
+
+/* Google Business profile strip */
+.gmb{
+  display:flex;flex-wrap:wrap;align-items:center;gap:18px 24px;margin-bottom:20px;
+  padding:20px 24px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:var(--r);box-shadow:var(--shadow-sm);
+}
+.gmb-logo{display:grid;place-items:center;width:52px;height:52px;flex:none;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.gmb-logo svg{width:26px;height:26px}
+.gmb-txt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 240px}
+.gmb-txt .mono{color:var(--muted);font-size:.62rem}
+.gmb-txt b{font-family:var(--display);font-weight:500;font-size:1.15rem;line-height:1.3}
+.gmb-note{font-size:.86rem;color:var(--muted)}
+.gmb-actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn-ghost{border-color:var(--line);color:var(--text);background:var(--surface-2)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-deep)}
+@media (max-width:520px){.gmb-actions,.gmb-actions .btn{flex:1 1 100%}}
 
 /* ---------- 14b. patient videos ---------- */
 .videos{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);grid-template-rows:auto auto;gap:22px 26px}
@@ -526,6 +556,8 @@ h1,h2,h3,h4{
 .detail .mono{color:var(--muted)}
 .detail a{font-weight:500;text-decoration:none;color:var(--action)}
 .detail a:hover{text-decoration:underline}
+.detail a.primary-no{font-size:1.06rem;font-weight:600}
+.detail .soft{font-size:.84rem}
 @media (max-width:460px){.detail{grid-template-columns:1fr;gap:5px}}
 
 .form{padding:clamp(24px,3vw,32px);background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r);box-shadow:var(--shadow)}
@@ -548,6 +580,24 @@ h1,h2,h3,h4{
 .form-note{margin-top:13px;text-align:center;font-size:.82rem;color:var(--muted)}
 .form-note a{color:var(--action);font-weight:500}
 
+/* online booking card (HealthPlix) */
+.booking{display:flex;flex-direction:column;gap:18px}
+.book-card{
+  display:flex;align-items:center;gap:18px;padding:22px 24px;text-decoration:none;
+  background:linear-gradient(135deg,#0B2E47 0%,#11486A 60%,#1D6A92 100%);color:#fff;
+  border-radius:var(--r);box-shadow:var(--shadow);border:1px solid #1D5A80;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.book-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.book-ic{display:grid;place-items:center;width:52px;height:52px;flex:none;border-radius:50%;background:#CC9A43;color:#fff;box-shadow:0 0 0 6px rgba(204,154,67,.22)}
+.book-ic svg{width:24px;height:24px}
+.book-txt{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.book-txt .mono{color:#F3DDB4;font-size:.6rem}
+.book-txt b{font-family:var(--display);font-weight:500;font-size:1.3rem;line-height:1.2}
+.book-txt small{color:#BFD8E6;font-size:.86rem}
+.book-go{font-size:1.5rem;color:#F3DDB4;transition:transform .2s ease}
+.book-card:hover .book-go{transform:translateX(4px)}
+
 
 /* ---------- 15b. map ---------- */
 .map-card{
@@ -566,6 +616,9 @@ h1,h2,h3,h4{
 .btn-ig{border-color:var(--line);color:var(--text);background:var(--surface-2)}
 .btn-ig svg{width:18px;height:18px;color:#C13584}
 .btn-ig:hover{border-color:#C13584;color:#C13584}
+.btn-fb{border-color:var(--line);color:var(--text);background:var(--surface-2)}
+.btn-fb svg{width:18px;height:18px;color:#1877F2}
+.btn-fb:hover{border-color:#1877F2;color:#1877F2}
 @media (max-width:780px){
   .map-card{grid-template-columns:1fr}
   .map-frame{min-height:280px}
@@ -583,6 +636,10 @@ h1,h2,h3,h4{
 .foot ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.92rem}
 .foot a{text-decoration:none}
 .foot a:hover{color:var(--gold)}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--ink-line);border-radius:50%;color:var(--on-ink);transition:border-color .18s ease,color .18s ease}
+.socials a:hover{border-color:var(--gold);color:var(--gold)}
+.socials svg{width:18px;height:18px}
 .foot-fine{
   display:flex;flex-wrap:wrap;gap:10px 26px;
   margin-top:36px;padding-top:20px;border-top:1px solid var(--ink-line);font-size:.8rem;
@@ -591,11 +648,12 @@ h1,h2,h3,h4{
 /* ---------- 17. mobile dock ---------- */
 .dock{
   position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
-  grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  grid-template-columns:1fr 1.2fr 1fr;gap:1px;background:var(--line);
   border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);
 }
 .dock a{padding:16px 8px;text-align:center;font-weight:600;font-size:.95rem;text-decoration:none;background:var(--surface);color:var(--text)}
 .dock a.wa{background:var(--action);color:var(--on-action)}
+.dock a.book{background:#CC9A43;color:#fff}
 @media (max-width:640px){.dock{display:grid}body{padding-bottom:64px}}
 
 /* ---------- 18. motion ---------- */
